@@ -1,3 +1,5 @@
+#include"Kuznechik.h"
+
 void GrassHopper :: getKey(int8_t& key_length256_bit)
 {
 	key = new uint8_t [length_of_key];
@@ -7,6 +9,7 @@ void GrassHopper :: getKey(int8_t& key_length256_bit)
 		key[k]=key_length256_bit[k];
 	}
 };
+
 void GrassHopper :: X(uint8_t& blockKey, uint8_t& blockText)
 {
 	for(uint8_t k=0; k<0x10; ++k)
@@ -14,6 +17,7 @@ void GrassHopper :: X(uint8_t& blockKey, uint8_t& blockText)
 		blockText[k]^=blockKey[k];
 	}
 };
+
 uint8_t GrassHopper :: pi(uint8_t& num) 
 {
 	static const pi_apostrophe[]=
@@ -54,6 +58,7 @@ uint8_t GrassHopper :: pi(uint8_t& num)
 	
 	return pi_apostrophe[num];
 };
+
 void GrassHopper :: S(uint8_t& blockText)
 {
 	for(uint8_t k=0;k<0x10;++k)
@@ -61,7 +66,20 @@ void GrassHopper :: S(uint8_t& blockText)
 		blockText[k]=pi(blockText[k]);
 	}
 };
+
 uint8_t GrassHopper :: l(uint8_t& blockText)
 {
 	
 };
+
+void GrassHopper :: R(uint8_t& blockText)
+{
+	uint8_t lokal=l(blockText);
+	
+	for(uint8_t k=0;k<0x0e;++k)
+	{
+		blockText[k]=blockText[k+1];
+	}
+	block[0x0f]=lokal;
+};
+

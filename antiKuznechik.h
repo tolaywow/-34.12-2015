@@ -2,15 +2,15 @@
 #include "Ikey.h"
 #include "Interface_algoritm.h"
 
-class GrassHopper: Ikey, Ishifr
+class AntiGrassHopper: Ikey, Ishifr
 {
 protected:
-	static const uint8_t length_of_key=0x20;
+static const uint8_t length_of_key=0x20;
 	uint8_t* key;
 	void X(uint8_t& blockKey, uint8_t& blockText);
-	void S(uint8_t& blockText);
-	void L(uint8_t& blockText);
-	void R(uint8_t& blockText);
+	void antiS(uint8_t& blockText);
+	void antiL(uint8_t& blockText);
+	void antiR(uint8_t& blockText);
 	uint8_t l(uint8_t& blockText);
 	uint8_t pi(uint8_t& num);
  
@@ -22,5 +22,4 @@ protected:
 	{
 		delete[] key;
 	};
- 
-}
+};
