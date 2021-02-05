@@ -16,8 +16,6 @@ static const uint8_t length_of_key=0x20;
  
  public:
 	void getKey(uint8_t& key_length256_bit);
-	//void in(uint8_t& name_of_file_key, uint8_t& name_of_file_text);
-	//void out(uint8_t& name_of_file_out);
 	~GrassHopper()
 	{
 		delete[] key;
