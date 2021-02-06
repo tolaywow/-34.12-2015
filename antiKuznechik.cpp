@@ -2,8 +2,6 @@
 
 void AntiGrassHopper :: getKey(int8_t& key_length256_bit)
 {
-	key = new uint8_t [length_of_key];
-	
 	for(uint8_t k=0; k<0x20; ++k)
 	{
 		key[k]=key_length256_bit[k];
@@ -57,4 +55,18 @@ uint8_t AntiGrassHopper :: pi(uint8_t& num)
 	};
 	
 	return pi_apostrophe[num];
+};
+
+void GrassHopper :: getBlock(int8_t& block_length128_bit)
+{	
+	for(uint8_t k=0;k<0x10;++k)
+	{
+		text[k]=block_length128_bit[k];
+	}
+};
+
+AntiGrassHopper :: AntiGrassHopper()
+{
+	key = new uint8_t[0x10];
+	text= new uint8_t[0x10];	
 };

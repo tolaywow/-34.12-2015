@@ -12,12 +12,14 @@ static const uint8_t length_of_key=0x20;
 	void antiL(uint8_t& blockText);
 	void antiR(uint8_t& blockText);
 	uint8_t l(uint8_t& blockText);
-	uint8_t pi(uint8_t& num);
- 
+	uint8_t pi(uint8_t& num);	
+	
  public:
 	void getKey(uint8_t& key_length256_bit);
+	AntiGrassHopper();
 	~GrassHopper()
 	{
 		delete[] key;
+		delete[] text;
 	};
 };
