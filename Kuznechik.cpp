@@ -8,11 +8,11 @@ void GrassHopper :: getKey(int8_t& key_length256_bit)
 	}
 };
 
-void GrassHopper :: X(uint8_t& blockKey, uint8_t& blockText)
+void GrassHopper :: X(uint8_t& blockKey, uint8_t& blocktext)
 {
 	for(uint8_t k=0; k<0x10; ++k)
 	{
-		blockText[k]^=blockKey[k];
+		blocktext[k]^=blockKey[k];
 	}
 };
 
@@ -57,26 +57,26 @@ uint8_t GrassHopper :: pi(uint8_t& num)
 	return pi_apostrophe[num];
 };
 
-void GrassHopper :: S(uint8_t& blockText)
+void GrassHopper :: S()
 {
 	for(uint8_t k=0;k<0x10;++k)
 	{
-		blockText[k]=pi(blockText[k]);
+		text[k]=pi(text[k]);
 	}
 };
 
-uint8_t GrassHopper :: l(uint8_t& blockText)
+uint8_t GrassHopper :: l()
 {
 	
 };
 
-void GrassHopper :: R(uint8_t& blockText)
+void GrassHopper :: R()
 {
-	uint8_t lokal=l(blockText);
+	uint8_t lokal=l(text);
 	
 	for(uint8_t k=0;k<0x0e;++k)
 	{
-		blockText[k]=blockText[k+1];
+		text[k]=text[k+1];
 	}
 	block[0x0f]=lokal;
 };
@@ -94,4 +94,16 @@ GrassHopper :: GrassHopper()
 	key = new uint8_t[0x10];
 	text= new uint8_t[0x10];	
 };
-s
+
+GrassHopper :: L()
+{
+	for(uint8_t k=0;k<0x10;++k)
+	{
+		R();
+	}
+};
+
+
+
+
+

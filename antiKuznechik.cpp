@@ -8,11 +8,11 @@ void AntiGrassHopper :: getKey(int8_t& key_length256_bit)
 	}
 };
 
-void AntiGrassHopper :: X(uint8_t& blockKey, uint8_t& blockText)
+void AntiGrassHopper :: X(uint8_t& blockKey, uint8_t& blocktext)
 {
 	for(uint8_t k=0; k<0x10; ++k)
 	{
-		blockText[k]^=blockKey[k];
+		blocktext[k]^=blockKey[k];
 	}
 };
 

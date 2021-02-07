@@ -8,11 +8,11 @@ protected:
 	static const uint8_t length_of_key=0x20;
 	uint8_t* key;
 	uint8_t* text;
-	void X(uint8_t& blockKey, uint8_t& blockText);
-	void S(uint8_t& blockText);
-	void L(uint8_t& blockText);
-	void R(uint8_t& blockText);
-	uint8_t l(uint8_t& blockText);
+	void X(uint8_t& blockKey, uint8_t& blocktext);
+	void S();
+	void L();
+	void R();
+	uint8_t l();
 	uint8_t pi(uint8_t& num);
  
  public:
