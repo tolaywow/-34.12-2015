@@ -70,3 +70,12 @@ AntiGrassHopper :: AntiGrassHopper()
 	key = new uint8_t[0x10];
 	text= new uint8_t[0x10];	
 };
+
+
+AntiGrassHopper :: antiL()
+{
+	for(uint8_t k=0;k<0x10;++k)
+	{
+		antiR();
+	}
+};
