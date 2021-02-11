@@ -65,9 +65,29 @@ void GrassHopper :: S()
 	}
 };
 
-uint8_t GrassHopper :: l()
+uint8_t GrassHopper :: l(uint8_t& blocktext)
 {
-	
+	/*static*/ uint8_t massiv_in_l[] = { 0x94, 0x20, 0x85, 0x10, 0xc2, 0xc0, 0x01,0xfb,
+									0x01, 0xc0, 0xc2, 0x10, 0x85, 0x20, 0x94, 0x01 };
+	uint32_t a0 = 0x00;
+	for (uint8_t k = 0x00; k < 0x10; ++k)
+	{
+		for (uint8_t j = 0x00; j < 0x08; ++j)
+		{
+			if ((massiv_in_l[k] ^ 1 << j )< massiv_in_l[k])
+				a0 ^= (blocktext[k] << j);
+		}
+		
+	}
+	0x1c3;
+	for (uint8_t k = 0x07; k > 0x00; --k)
+	{
+		if ((a0 ^ 1 << (k + 0x07)) < a0)
+			a0 ^= 0x1c3 << k-1;
+
+	}
+
+	return a0;
 };
 
 void GrassHopper :: R()
