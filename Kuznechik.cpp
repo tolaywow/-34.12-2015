@@ -1,5 +1,12 @@
 #include"Kuznechik.h"
 
+GrassHopper :: GrassHopper()
+{
+	key = new uint8_t[0x10];
+	text= new uint8_t[0x10];	
+};
+
+
 void GrassHopper :: getKey(int8_t& key_length256_bit)
 {
 	for(uint8_t k=0; k<0x20; ++k)
@@ -109,11 +116,6 @@ void GrassHopper :: getBlock(int8_t& block_length128_bit)
 	}
 };
 
-GrassHopper :: GrassHopper()
-{
-	key = new uint8_t[0x10];
-	text= new uint8_t[0x10];	
-};
 
 GrassHopper :: L()
 {
@@ -123,8 +125,8 @@ GrassHopper :: L()
 	}
 };
 
-
-
-
-
-
+GrassHopper :: ~GrassHopper()
+{
+    delete[] key;
+    delete[] text;
+};

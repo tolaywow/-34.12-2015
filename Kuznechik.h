@@ -1,6 +1,7 @@
 #pragma once
 #include "Ikey.h"
 #include "Interface_algoritm.h"
+#include <cint>
 
 class GrassHopper: Ikey, Ishifr
 {
